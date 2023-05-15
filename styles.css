@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* *{
+  padding: 0;
+  margin: 0;
+} *-selector refers at once to ALL selectors in the document.*/
+
+body {
+  background-color: #f1f1f1;
+  color: #0f141e;
+  font-size: 16px;
+  font-weight: normal;
+  /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+  font-family: "Roboto", sans-serif;
+  /* this roboto font family was a custom font from google fonts site.
+  imported with the url above and adding font-family rule.  */
+  /* font: normal 16px "Roboto", sans-serif; - it's possible to 
+  combine several rules for the same group (like font-rules here)
+  in a one general rule, like it's shown here*/
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* a:active {
+  color: blue;
+  means that the cursor is hold on the link
+} */
+
+/* a:visited {
+  color: #86898f;
+  means the link has been visited already.
+} */
+
+.herophoto {
+  width: 200px;
+  /* border-radius: 50%; that makes a round photo. but the photo should be perfectly squere
+  if to make it round without any additional styling */
+  border-radius: 28px;
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.info p {
+  color: #86898f;
+  margin: 0;
+  font-style: italic;
+  /* letter-spacing: 10px; */
+  /* word-spacing: 42px; */
+}
+
+.info {
+  margin-bottom: 20px;
+  display: flex;
+}
+ 
+/* adaptive 
+
+@media(max-width: 700px){
+.info{
+  display: block;
+}
+} - means that display block will work for the .info class when the screen is less than
+700px. when the screen is more than 700px usual conditions will be valid.
+*/
+@media(max-width: 700px){
+.info{
+  display: block;
+  text-align: center;
+}
+}
+
+.info-text {
+  margin-left: 40px;
+}
+
+.info-text h4{
+  margin-bottom: 10px;
+}
+/* box model  - marging (outside), padding (inside)*/
+.container {
+  max-width: 75%;
+  /* max-width means that the block can take that max width but
+  if less is necessary it'll adapt to it. */
+  margin: auto;
+  padding: 30px 0 30px;
+}
+
+/* .socialmedia {
+  background: red;
+  padding: 15px;
+  border: 5px solid green; */
+/* border: size style color; */
+/* margin: 20px;
+  border-bottom-style: dotted;
+  border-top-width: 15px;
+  border-right-color: blue; */
+/* } */
+
+/* .box-model > div - means that styling is applied to all direct children div's of that class.
+while .box-model div - means that styling applies to all div's inside of that class, even those,
+that are inside of the child-div. */
+/* .box-model > div{
+  float: left;
+background: #000;
+height: 200px;
+border: 4px solid red;
+width: 25%;
+box-sizing: border-box;
+/* border-box meaning counts the border size  in block size distribution. */
+/* } */
+
+.bg-yellow {
+  background: #fff9dc;
+}
+.bg-green {
+  background: #e5ffe7;
+}
+.bg-red {
+  background: #ffe5e5;
+}
+
+.card {
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  /* it's recommended to use precisely margin-bottom for this perpose,
+  because this way it'll remain, but margin-top can affect the style in case a top element will
+  be deleted - that ends in a code refactoring. */
+  border-radius: 20px;
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+/* bt default lists in css have own css-properties. in particulary they
+have padding-left 40px. */
+
+.list {
+  padding: 0 20px;
+  /* list-style: none; removes (or changes if needed and if soc hosed)
+  the numeration in front of the list */
+}
+
+.list li {
+  color: #86898f;
+  margin-bottom: 10px;
+  /* border-bottom: 1px solid grey; */
+}
+
+.table {
+  width: 100%;
+}
+
+.table td {
+  /* margin-bottom: 10px; */
+  /* margin-bottom work not for all elements. it depens
+  on the "display" charcteristic of the element. by default td has
+  display: table-cell. aside from working with the display characteristic directly,
+  it's possible to solve the problem by adding padding instead of margin.*/
+  padding-bottom: 10px;
+}
+
+/* td:nth-child(2) - pseudo selector :nth-child() to pick and style a certain serial element.
+td:nth-child(2) - td because in this case we need to style precisely td. 
+:nth-child() - pseudo selector itself. (2) - 2 is the number of the serial of the element that
+needs to be styled.
+that pseudo selector helps to style certain serial elements without adding a huge number of excessive classes in the html code.
+ */
+.table td:nth-child(2),
+td:nth-child(3) {
+  color: #868686;
+}
+
+/* .table tr:nth-child(odd){
+  background: red;
+} */
+
+.link-list {
+  list-style: none;
+  padding: 0;
+  /* that padding: 0 removes bydefault list padding from the left. */
+}
+
+.link-list li {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.contact h2 {
+  text-align: center;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #868686;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  /* background: transparent; makes the input field transparent=it obtains collor of the background.*/
+  border-bottom: 1px solid #ccc;
+  color: #000;
+  padding: 15px 0 10px;
+  outline: none;
+  /* outline: none; erases outline (bold border around the input field */
+  font-family: inherit;
+  /* font-family: inherit; means that font-family inherits from the body */
+}
+
+.row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+/* .row > .form-group - that > in that lines means that we address to the formgroup class from the row class. */
+.row > .form-group {
+  width: 50%;
+  /* margin-right: 20px; that adds margin to both children (name and email fields).
+  the next pseudoselector adds margin to 1 child only.
+  if to use last-child then here margin-right stays 20px and in
+  last-child selector margin-rught 0 - that adds margin in between children and no
+  margin after the last child.*/
+}
+
+.row > .form-group:first-child {
+  margin-right: 20px;
+  /* that adds margin to the right after the first child (name) only! */
+}
+
+.btn{
+  background: #000;
+  color: #fff;
+  padding: 15px 20px;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn:hover{
+  opacity: 0.9;
+}
+
+/* Position 
+
+ .position{
+position: relative;
+if we want to position child element relatively to the parent element, 
+we need to give to the parent element position: relative.
+border: 4px solid #000;
+margin-top: 40px;
+padding: 20px;
+height: 300px;
+
+
+.box{
+position: fixed; - fixates element according to additional conditions (boottom,
+top, right, left) and parent element.
+position: fixed;
+bottom: 50px;
+right: 50px;
+border-radius: 50%;
+position: absolute; - it is positioned relatively to the parent element
+with the position: relative, and relatively to the position: absolut. */
+/* bottom: 250px;
+left: 12px;
+if we want to position child element relatively to the parent element, 
+we need to give to the parent element position: relative.
+position: absolute; - in this case div.position doesn't see that
+div.box is inside of the div.position and that's why it leaves only empty space
+represented by padding in that case (deleting paddings will leave no block .position at all).
+element with the position: absolute makes that element to bear no content meaning
+for the block. by default, if no additional conditions are followed,
+means that element is positioned relatively to the window top.
+those additional conditions are top, bottom, left, right.
+ position: static; - by default meaning 
+
+  width: 50px;
+  height: 50px;
+  background: lightcoral;
+}  */
